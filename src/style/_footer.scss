@@ -1,0 +1,13 @@
+footer {
+  @apply text-center text-white py-4 pt-20 relative mt-14;
+
+  &::before {
+    content: "";
+    @apply w-full h-28 bg-white
+    absolute left-0 -top-14 rounded-full;
+  }
+
+  p {
+    @apply m-0;
+  }
+}

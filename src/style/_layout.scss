@@ -1,0 +1,42 @@
+header {
+  @apply max-w-screen-fill py-4;
+  grid-area: header;
+}
+
+main {
+  @apply max-w-screen-fill lg:w-content mx-auto px-4;
+  grid-area: main;
+}
+
+footer {
+  @apply bg-primary;
+  grid-area: footer;
+}
+
+.body {
+  @apply grid min-h-screen;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+p {
+  @apply mb-4;
+}
+
+.full-width {
+  @apply w-screen relative left-1/2 right-1/2 pt-12;
+
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  &.light {
+    @apply bg-gradient-to-b from-light to-white;
+  }
+
+  > * {
+    @apply max-w-screen-fill lg:w-content mx-auto px-4;
+  }
+}

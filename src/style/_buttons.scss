@@ -1,0 +1,8 @@
+button,
+.button {
+  @apply bg-primary text-white font-sans-demi-bold px-4 py-2 inline-block uppercase;
+
+  &.button-light {
+    @apply bg-light text-black;
+  }
+}

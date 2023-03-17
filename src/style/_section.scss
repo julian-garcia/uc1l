@@ -1,0 +1,22 @@
+section {
+  @apply my-20;
+
+  &.intro {
+    @apply block md:grid grid-cols-1 md:grid-cols-2 gap-8;
+
+    .image {
+      @apply bg-cover bg-no-repeat h-36 w-full sm:w-36 md:h-full md:w-full
+      float-left md:float-none mr-4 mb-2 md:mr-0 md:mb-0;
+    }
+  }
+
+  .sub-title {
+    @apply mb-4;
+    font-variant: small-caps;
+
+    &.underlined {
+      @apply border-b-8 inline-block pb-2 pl-4 -ml-4;
+      border-image: linear-gradient(to right, white, var(--primary)) 1;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "uc1l",
+  "version": "1.0.0",
+  "description": "U Change 1 Life",
+  "private": "true",
+  "source": [
+    "src/style/style-editor.scss",
+    "src/style/main.scss",
+    "src/js/main.js"
+  ],
+  "browserslist": "> 0.5%, last 2 versions",
+  "scripts": {
+    "wp-env": "wp-env start",
+    "start": "rm -rf dist && parcel watch",
+    "build": "rm -rf .parcel-cache && rm -rf dist && npm run format && parcel build",
+    "format": "prettier --write .",
+    "theme-zip": "npm run build && node package-theme.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "@wordpress/env": "^5.13.0",
+    "archiver": "^5.3.1",
+    "parcel": "^2.8.3",
+    "postcss": "^8.4.21",
+    "prettier": "2.8.4",
+    "tailwindcss": "^3.2.7"
+  }
+}
