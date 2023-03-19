@@ -1,4 +1,4 @@
-<section>
+<section class="slider">
   <h2 class="sub-title text-center !mb-0">Our Clients Say:</h2>
   <div class="swiper testimonials">
     <div class="swiper-wrapper">

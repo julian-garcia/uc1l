@@ -1,47 +1,51 @@
-.testimonials.swiper {
-  @apply mx-auto sm:w-full max-w-2xl relative -mt-6;
+.slider {
+  max-width: calc(100vw - 3rem);
 
-  .swiper-wrapper {
-    @apply mb-16;
-  }
+  .testimonials.swiper {
+    @apply mx-auto sm:w-full max-w-2xl relative -mt-6;
 
-  .swiper-slide {
-    @apply px-14 py-10 mt-4;
-  }
+    .swiper-wrapper {
+      @apply sm:mb-16;
+    }
 
-  .swiper-pagination {
-    @apply bottom-0;
+    .swiper-slide {
+      @apply px-4 sm:px-14 py-10 mt-4 pr-0;
+    }
 
-    &-bullet {
-      @apply w-6 h-6 border-4 border-primary bg-light opacity-100 mx-2;
+    .swiper-pagination {
+      @apply bottom-0;
 
-      &-active {
-        @apply bg-primary;
+      &-bullet {
+        @apply w-6 h-6 border-4 border-primary bg-light opacity-100 mx-2;
+
+        &-active {
+          @apply bg-primary;
+        }
       }
     }
-  }
 
-  .testimonial-name {
-    @apply font-sans-demi-bold relative bg-white inline-block mb-2 px-2 rounded-sm;
-  }
-
-  .testimonial-text {
-    @apply bg-light border-8 border-primary p-4 relative min-h-[150px];
-
-    &::before {
-      content: '"';
-      @apply absolute -left-14 top-0 font-sans-bold text-8xl -rotate-12 text-primary;
+    .testimonial-name {
+      @apply font-sans-demi-bold relative bg-white inline-block mb-2 px-2 rounded-sm;
     }
 
-    &::after {
-      content: '"';
-      @apply absolute right-3 -top-10 font-sans-bold text-8xl rotate-6 text-light;
-    }
-  }
+    .testimonial-text {
+      @apply bg-light border-8 border-primary p-4 relative min-h-[150px];
 
-  .angled-background {
-    @apply absolute bg-primary left-12 top-16 -rotate-12 origin-center;
-    height: calc(100% - 5rem);
-    width: calc(100% - 5rem);
+      &::before {
+        content: '"';
+        @apply absolute -left-6 sm:-left-14 -top-4 font-sans-bold text-8xl -rotate-12 text-primary;
+      }
+
+      &::after {
+        content: '"';
+        @apply absolute -top-8 right-0 sm:right-3 sm:-top-10 font-sans-bold text-8xl rotate-6  text-primary sm:text-light;
+      }
+    }
+
+    .angled-background {
+      @apply hidden sm:block absolute bg-primary left-12 top-16 -rotate-12 origin-center;
+      height: calc(100% - 5rem);
+      width: calc(100% - 5rem);
+    }
   }
 }

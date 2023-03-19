@@ -7,6 +7,7 @@ module.exports = {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         light: "var(--light)",
+        "light-primary": "var(--light-primary)",
       },
       fontFamily: {
         "sans-bold": ["bold", "sans-serif"],

@@ -36,6 +36,10 @@ p {
     @apply bg-gradient-to-b from-light to-white;
   }
 
+  &.light-primary {
+    @apply bg-gradient-to-b from-light-primary to-white;
+  }
+
   > * {
     @apply max-w-screen-fill lg:w-content mx-auto px-4;
   }

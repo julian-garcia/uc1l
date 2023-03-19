@@ -19,5 +19,10 @@
 <?php get_template_part('templates/content', 'cards'); ?>
 <?php get_template_part('templates/content', 'testimonials'); ?>
 
+<div class="full-width light-primary">
+  <h2 class="sub-title text-center">Our Services</h2>
+  <?php get_template_part('templates/content', 'text-image-block'); ?>
+</div>
+
 <?php the_content(); ?>
 <?php get_footer(); ?>

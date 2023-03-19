@@ -10,13 +10,70 @@ section {
     }
   }
 
-  .sub-title {
-    @apply mb-4;
-    font-variant: small-caps;
+  &.section-block {
+    @apply mt-8 grid grid-cols-3 gap-4 sm:gap-8;
 
-    &.underlined {
-      @apply border-b-8 inline-block pb-2 pl-4 -ml-4;
-      border-image: linear-gradient(to right, white, var(--primary)) 1;
+    &.left {
+      & > *:nth-of-type(1) {
+        @apply order-2 sm:order-1;
+      }
+
+      & > *:nth-of-type(2) {
+        @apply order-1 sm:order-2;
+      }
+    }
+
+    &.right {
+      & > *:nth-of-type(1) {
+        @apply order-2;
+      }
+
+      & > *:nth-of-type(2) {
+        @apply order-1;
+      }
+
+      .sub-title {
+        &.light::after {
+          @apply from-transparent to-light;
+        }
+
+        &.primary::after {
+          @apply from-transparent to-primary;
+        }
+      }
+    }
+
+    .block-image {
+      @apply bg-cover bg-no-repeat bg-center rounded-full h-52 w-52 max-w-full max-h-full;
+    }
+
+    .block-text {
+      p {
+        @apply my-8;
+      }
+    }
+
+    .sub-title {
+      @apply relative mb-6;
+
+      &::after {
+        content: "";
+        @apply absolute left-0 -bottom-4 w-full h-2 bg-gradient-to-r;
+      }
+
+      &.light::after {
+        @apply from-light to-transparent;
+      }
+
+      &.primary::after {
+        @apply from-primary to-transparent;
+      }
+    }
+
+    .button {
+      &.light {
+        @apply bg-light border-2 border-secondary text-black;
+      }
     }
   }
 }

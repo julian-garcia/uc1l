@@ -56,3 +56,13 @@ h4 {
 h4 {
   @apply font-sans-demi-bold;
 }
+
+.sub-title {
+  @apply mb-4;
+  font-variant: small-caps;
+
+  &.underlined {
+    @apply border-b-8 inline-block pb-2 pl-4 -ml-4;
+    border-image: linear-gradient(to right, white, var(--primary)) 1;
+  }
+}
