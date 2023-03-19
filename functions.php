@@ -1,8 +1,9 @@
 <?php
 
 function theme_scripts() {
-  wp_enqueue_style('uc1l-css', get_template_directory_uri() . '/dist/style/main.css');
-  wp_enqueue_script( 'uc1l-js', get_template_directory_uri() . '/dist/js/main.js', array(), '1.0', true );
+  $version = wp_get_theme()->get('Version');
+  wp_enqueue_style('uc1l', get_template_directory_uri() . '/dist/style/main.css', '', $version);
+  wp_enqueue_script('uc1l', get_template_directory_uri() . '/dist/js/main.js', '', $version, true);
 }
 
 function add_editor_styles() {
@@ -31,6 +32,27 @@ function event_post_type() {
   );
 }
 
+function testimonial_post_type() {
+  register_post_type('testimonial',
+    array(
+      'rewrite' => array('slug' => 'testimonial'),
+      'labels' => array(
+        'name' => 'Testimonials',
+        'singular_name' => 'Testimonial',
+        'add_new_item' => 'Add New Testimonial',
+        'edit_item' => 'Edit Testimonial'
+      ),
+      'menu_icon' => 'dashicons-groups',
+      'public' => true,
+      'has_archive' => false,
+      'show_in_rest' => false,
+      'supports' => array(
+        'title', 'editor'
+      )
+    )
+  );
+}
+
 function setup_menus() {
   $locations = array(
     'primary' => 'Main Menu',
@@ -41,4 +63,5 @@ function setup_menus() {
 add_action('wp_enqueue_scripts', 'theme_scripts');
 add_action('admin_init', 'add_editor_styles');
 add_action( 'init', 'event_post_type' );
+add_action( 'init', 'testimonial_post_type' );
 add_action( 'init', 'setup_menus' );
