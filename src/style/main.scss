@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #4015b8;
+  --secondary: #02b812;
+  --light: #e7f8e9;
+  --light-primary: #dbd3f2;
+}
+
 @import "./fonts";
 @import "./navigation";
 @import "./buttons";
@@ -12,6 +19,7 @@
 @import "./cards";
 @import "/node_modules/swiper/swiper-bundle.css";
 @import "./slider";
+@import "./mission";
 
 html,
 body {
@@ -24,11 +32,4 @@ body {
 
 html {
   font-size: 18px;
-}
-
-:root {
-  --primary: #4015b8;
-  --secondary: #02b812;
-  --light: #e7f8e9;
-  --light-primary: #dbd3f2;
 }

@@ -16,10 +16,18 @@
 
   &.light {
     @apply bg-white;
+
+    .card-label {
+      @apply border-white bg-primary text-white;
+    }
   }
 
   &.primary {
     @apply bg-primary text-white;
+
+    .card-label {
+      @apply border-primary bg-white text-primary;
+    }
   }
 
   .card-link {
@@ -36,5 +44,14 @@
 
   .card-icon {
     @apply h-20 mx-auto -mt-14 mb-4 transition-transform;
+  }
+
+  .card-label {
+    @apply rounded-full border-4 min-w-[48px] p-2 inline-block
+      text-xl leading-none font-sans-demi-bold;
+  }
+
+  .card-label-link {
+    @apply block -mt-8 mb-4;
   }
 }

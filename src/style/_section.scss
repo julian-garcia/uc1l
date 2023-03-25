@@ -11,15 +11,24 @@ section {
   }
 
   &.section-block {
-    @apply mt-8 grid grid-cols-3 gap-4 sm:gap-8;
+    @apply mt-8 grid xs:grid-cols-3 gap-4 sm:gap-8;
 
     &.left {
       & > *:nth-of-type(1) {
-        @apply order-2 sm:order-1;
+        @apply order-2;
       }
 
       & > *:nth-of-type(2) {
-        @apply order-1 sm:order-2;
+        @apply order-1;
+      }
+      @screen xs {
+        & > *:nth-of-type(1) {
+          @apply order-1;
+        }
+
+        & > *:nth-of-type(2) {
+          @apply order-2;
+        }
       }
     }
 
@@ -41,10 +50,41 @@ section {
           @apply from-transparent to-primary;
         }
       }
+
+      .block-image {
+        &.circle-light::after {
+          @apply -left-10;
+        }
+      }
     }
 
     .block-image {
-      @apply bg-cover bg-no-repeat bg-center rounded-full h-52 w-52 max-w-full max-h-full;
+      @apply bg-cover bg-no-repeat bg-center rounded-full h-52 w-52
+        max-w-full max-h-full relative justify-self-center;
+
+      &.square {
+        @apply rounded-none;
+      }
+
+      &.fit {
+        @apply bg-contain max-w-[150px] max-h-[150px];
+      }
+
+      &.circle-light::before,
+      &.circle-light::after {
+        content: "";
+        @apply absolute -top-4 rounded-full -z-10;
+        height: calc(100% + 2rem);
+        width: calc(100% + 2rem);
+      }
+
+      &.circle-light::before {
+        @apply -left-4 bg-light;
+      }
+
+      &.circle-light::after {
+        @apply left-2 bg-secondary -z-20 opacity-50;
+      }
     }
 
     .block-text {

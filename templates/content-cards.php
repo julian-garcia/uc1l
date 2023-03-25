@@ -9,10 +9,20 @@
         style="background-image: url(<?php echo get_field('card' . $i)['image']; ?>)">
       </div>
       <div class="card-content">
-        <a href="<?php echo get_field('card' . $i)['button']['link'] ?>">
+        <a href="<?php echo get_field('card' . $i)['button']['link'] ?>"
+          class="<?php if (get_field('card' . $i)['button']['label']) {echo 'card-label-link';} ?>">
+          <?php if (get_field('card' . $i)['button']['icon']): ?>
           <img class="card-icon" src="<?php echo get_field('card' . $i)['button']['icon'] ?>" alt="">
+          <?php endif; ?>
+          <?php if (get_field('card' . $i)['button']['label']): ?>
+          <span class="card-label">
+            <?php echo get_field('card' . $i)['button']['label']; ?>
+          </span>
+          <?php endif; ?>
         </a>
-        <h4 class="sub-title text-center"><?php echo get_field('card' . $i)['title'] ?></h4>
+        <h4 class="sub-title text-center">
+          <?php echo get_field('card' . $i)['title'] ?>
+        </h4>
         <p><?php echo get_field('card' . $i)['text'] ?></p>
       </div>
     </div>

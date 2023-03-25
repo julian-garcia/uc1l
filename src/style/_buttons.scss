@@ -5,4 +5,8 @@ button,
   &.button-light {
     @apply bg-light text-black border-light;
   }
+
+  &.ghost {
+    @apply bg-transparent border-primary text-primary;
+  }
 }

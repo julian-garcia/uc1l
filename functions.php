@@ -60,8 +60,33 @@ function setup_menus() {
   register_nav_menus($locations);
 }
 
+function cards_shortcode() {
+  ob_start();
+  get_template_part('templates/content', 'cards');
+  return ob_get_clean();
+}
+
+function text_image_blocks_shortcode() {
+  ob_start();
+  get_template_part('templates/content', 'text-image-block');
+  return ob_get_clean();
+}
+
+function mission_shortcode() {
+  ob_start();
+  get_template_part('templates/content', 'mission');
+  return ob_get_clean();
+}
+
+function shortcodes_init() {
+  add_shortcode( 'cards', 'cards_shortcode' );
+  add_shortcode( 'blocks', 'text_image_blocks_shortcode' );
+  add_shortcode( 'mission', 'mission_shortcode' );
+}
+
 add_action('wp_enqueue_scripts', 'theme_scripts');
 add_action('admin_init', 'add_editor_styles');
 add_action( 'init', 'event_post_type' );
 add_action( 'init', 'testimonial_post_type' );
 add_action( 'init', 'setup_menus' );
+add_action( 'init', 'shortcodes_init' );
