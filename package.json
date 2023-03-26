@@ -6,7 +6,9 @@
   "source": [
     "src/style/style-editor.scss",
     "src/style/main.scss",
-    "src/js/main.js"
+    "src/js/main.js",
+    "src/images/menu-toggle.svg",
+    "src/images/close-menu.svg"
   ],
   "browserslist": "> 0.5%, last 2 versions",
   "scripts": {

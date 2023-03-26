@@ -30,6 +30,21 @@
           )
         );
       ?>
+      <button id="mobileMenuToggle" class="mobile-menu-toggle">
+        <img id="mobileMenuClosed" src="<?php echo get_template_directory_uri(); ?>/dist/images/menu-toggle.svg" alt="">
+        <img id="mobileMenuOpen" src="<?php echo get_template_directory_uri(); ?>/dist/images/close-menu.svg" alt="" class="hidden">
+      </button>
+      <?php
+        wp_nav_menu(
+          array(
+            'menu' => 'primary',
+            'menu_id' => 'mobileMenu',
+            'container' => '',
+            'theme_location' => 'primary',
+            'menu_class' => 'mobile-menu hidden'
+          )
+        );
+      ?>
     </div>
   </header>
   <main>
