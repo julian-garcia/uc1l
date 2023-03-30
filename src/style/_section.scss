@@ -2,11 +2,19 @@ section {
   @apply my-20;
 
   &.intro {
-    @apply block md:grid grid-cols-1 md:grid-cols-2 gap-8;
+    @apply block md:grid grid-cols-1 md:grid-cols-3 gap-8 mt-32;
 
     .image {
       @apply bg-cover bg-no-repeat h-36 w-full sm:w-36 md:h-full md:w-full
       float-left md:float-none mr-4 mb-2 md:mr-0 md:mb-0;
+
+      &.fit {
+        @apply bg-contain;
+      }
+    }
+
+    .text {
+      @apply col-span-2;
     }
   }
 
@@ -59,31 +67,45 @@ section {
     }
 
     .block-image {
-      @apply bg-cover bg-no-repeat bg-center rounded-full h-52 w-52
-        max-w-full max-h-full relative justify-self-center;
+      @apply h-48 w-48 max-w-full max-h-full relative justify-self-center self-center;
 
-      &.square {
+      .image {
+        @apply bg-cover bg-no-repeat bg-center rounded-full h-full w-full relative z-30;
+      }
+
+      &.square .image {
         @apply rounded-none;
       }
 
-      &.fit {
-        @apply bg-contain max-w-[150px] max-h-[150px];
+      &.fit .image {
+        @apply bg-contain;
       }
 
       &.circle-light::before,
-      &.circle-light::after {
+      &.circle-light::after,
+      &.circle-primary::before,
+      &.circle-primary::after {
         content: "";
-        @apply absolute -top-4 rounded-full -z-10;
+        @apply absolute -top-4 rounded-full;
         height: calc(100% + 2rem);
         width: calc(100% + 2rem);
       }
 
-      &.circle-light::before {
-        @apply -left-4 bg-light;
+      &.circle-light::before,
+      &.circle-primary::before {
+        @apply -left-4 bg-light z-10;
       }
 
-      &.circle-light::after {
-        @apply left-2 bg-secondary -z-20 opacity-50;
+      &.circle-light::after,
+      &.circle-primary::after {
+        @apply left-2 bg-secondary opacity-50;
+      }
+
+      &.circle-primary::before {
+        @apply bg-light-primary;
+      }
+      &.circle-primary::after {
+        @apply bg-primary;
       }
     }
 
@@ -98,7 +120,7 @@ section {
 
       &::after {
         content: "";
-        @apply absolute left-0 -bottom-4 w-full h-2 bg-gradient-to-r;
+        @apply absolute left-0 -bottom-4 w-full h-2 bg-gradient-to-r from-transparent to-transparent;
       }
 
       &.light::after {

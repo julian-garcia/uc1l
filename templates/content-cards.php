@@ -5,7 +5,8 @@
     <?php for ($i = 1; $i <= 3; $i++): ?>
     <div class="card <?php echo get_field('card' . $i)['type'] ?>">
       <a class="card-link" href="<?php echo get_field('card' . $i)['button']['link'] ?>"></a>
-      <div class="card-image"
+      <?php $image_options = implode(' ', get_field('card' . $i)['card_image_options']); ?>
+      <div class="card-image <?php echo $image_options; ?>"
         style="background-image: url(<?php echo get_field('card' . $i)['image']; ?>)">
       </div>
       <div class="card-content">

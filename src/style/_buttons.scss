@@ -6,6 +6,10 @@ button,
     @apply bg-light text-black border-light;
   }
 
+  &.secondary {
+    @apply bg-secondary text-black border-secondary;
+  }
+
   &.ghost {
     @apply bg-transparent border-primary text-primary;
   }

@@ -40,6 +40,18 @@
 
   .card-image {
     @apply bg-cover bg-no-repeat h-52 w-full rounded-t-md;
+
+    &.icon {
+      @apply bg-contain bg-center;
+    }
+
+    &.white {
+      @apply bg-white border-[1rem] border-white;
+    }
+
+    &.primary {
+      @apply bg-primary border-[1rem] border-primary;
+    }
   }
 
   .card-icon {

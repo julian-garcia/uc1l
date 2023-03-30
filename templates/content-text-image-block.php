@@ -1,10 +1,12 @@
-<?php if (get_field( "section_title")): ?>
-  <h2 class="sub-title text-center"><?php the_field("section_title"); ?></h2>
-<?php endif; ?>
-
 <?php for ($i = 1; $i <= 3; $i++): ?>
-  <?php if (get_field( "block_" . $i )["block_title"]): ?>
+  <?php if (get_field( "block_" . $i )["block_text"]): ?>
   <?php $options = get_field( "block_" . $i )['block_image_options']; ?>
+  <? if (get_field( "block_" . $i )['block_background']): ?>
+  <div class="full-width <?php echo get_field( "block_" . $i )['block_background']; ?>">
+    <?php if (get_field( "section_title") && $i == 1): ?>
+    <h2 class="sub-title text-center"><?php the_field("section_title"); ?></h2>
+    <?php endif; ?>
+  <?php endif; ?>
   <section class="section-block
     <?php echo get_field( "block_" . $i )['block_type']; ?>">
     <div class="block-text col-span-2">
@@ -20,11 +22,14 @@
       </a>
       <?php endif; ?>
     </div>
-    <div
-      class="block-image col-span-1 <?php echo implode(' ',$options); ?>"
-      style="background-image: url(<?php echo get_field( "block_" . $i )["block_image"]; ?>)">
+    <div class="block-image col-span-1 <?php echo implode(' ',$options); ?>">
+      <div class="image" style="background-image:url(<?php echo get_field( "block_" . $i )["block_image"]; ?>)"></div>
     </div>
   </section>
+  <? if (get_field( "block_" . $i )['block_background']): ?>
+  </div>
+  <?php endif; ?>
+
   <?php endif; ?>
 <?php endfor; ?>
 
