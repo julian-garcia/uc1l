@@ -22,7 +22,7 @@
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.3",
-    "@wordpress/env": "^5.13.0",
+    "@wordpress/env": "^5.15.0",
     "archiver": "^5.3.1",
     "parcel": "^2.8.3",
     "postcss": "^8.4.21",

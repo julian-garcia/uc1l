@@ -2,7 +2,8 @@
   <h2 class="sub-title text-center"><?php the_field( "cards_title" ); ?></h2>
   <h4 class="headline"><?php the_field( "cards_subtitle" ); ?></h4>
   <div class="card-grid">
-    <?php for ($i = 1; $i <= 3; $i++): ?>
+    <?php for ($i = 1; $i <= 6; $i++): ?>
+    <?php if (get_field('card' . $i)['text']): ?>
     <div class="card <?php echo get_field('card' . $i)['type'] ?>">
       <a class="card-link" href="<?php echo get_field('card' . $i)['button']['link'] ?>"></a>
       <?php $image_options = implode(' ', get_field('card' . $i)['card_image_options']); ?>
@@ -27,6 +28,7 @@
         <p><?php echo get_field('card' . $i)['text'] ?></p>
       </div>
     </div>
+    <?php endif; ?>
     <?php endfor; ?>
   </div>
 </section>

@@ -39,7 +39,7 @@
   }
 
   .card-image {
-    @apply bg-cover bg-no-repeat h-52 w-full rounded-t-md;
+    @apply bg-cover bg-no-repeat h-80 sm:h-72 md:h-52 w-full rounded-t-md;
 
     &.icon {
       @apply bg-contain bg-center;

@@ -1,6 +1,6 @@
 header.header {
   @apply bg-primary text-white sm:text-black sm:bg-gradient-to-r
-    from-light to-primary via-primary z-10;
+    from-light to-primary via-primary z-40 relative;
 
   .header-container {
     @apply max-w-full lg:w-content px-4 mx-auto grid grid-cols-3 gap-2 xs:gap-4 items-center justify-items-start;
@@ -24,19 +24,41 @@ header.header {
     @apply gap-0 text-white font-sans-demi-bold hidden xl:flex justify-self-end;
 
     .menu-item {
-      @apply block;
+      @apply block relative;
+    }
+
+    .sub-menu {
+      @apply h-0 opacity-0 transition-none overflow-hidden;
+    }
+
+    & > .menu-item:hover .sub-menu {
+      @apply h-[unset] absolute top-8 left-0 ml-4 bg-white shadow-sm shadow-primary
+        text-black rounded-sm py-0 px-4 pb-2 -mt-2 opacity-100 transition-opacity duration-300;
+      a {
+        text-shadow: none;
+      }
+
+      .menu-item {
+        a {
+          @apply px-4 pb-0 -ml-4 -mr-4 border-none rounded-none block;
+        }
+      }
+
+      .current-menu-item a {
+        @apply border-none rounded-none from-light to-light  block;
+      }
     }
   }
 
   .mobile-menu-toggle {
-    @apply absolute right-4 top-6 block xl:hidden bg-white rounded-full p-2 z-10 border-4;
+    @apply fixed right-4 top-6 block xl:hidden bg-white rounded-full p-2 z-10 border-4;
     img {
       @apply w-8 h-8 cursor-pointer;
     }
   }
 
   .mobile-menu {
-    @apply absolute w-full h-full left-0 top-0 p-8 bg-white xl:hidden;
+    @apply fixed w-full h-full left-0 top-0 p-8 bg-white xl:hidden;
 
     .menu-item {
       @apply my-4 font-sans-demi-bold text-black;
@@ -47,6 +69,10 @@ header.header {
 
     .current-menu-item a {
       @apply border-0 border-b-4 m-2;
+    }
+
+    .sub-menu {
+      @apply ml-4;
     }
   }
 

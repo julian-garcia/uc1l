@@ -1,8 +1,8 @@
 section {
-  @apply my-20;
+  @apply my-12;
 
   &.intro {
-    @apply block md:grid grid-cols-1 md:grid-cols-3 gap-8 mt-32;
+    @apply block md:grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 relative;
 
     .image {
       @apply bg-cover bg-no-repeat h-36 w-full sm:w-36 md:h-full md:w-full
@@ -14,7 +14,14 @@ section {
     }
 
     .text {
-      @apply col-span-2;
+      @apply col-span-2 font-sans-demi-bold min-h-[200px];
+    }
+
+    ul {
+      @apply list-disc ml-4;
+      li {
+        @apply mb-4 pl-2;
+      }
     }
   }
 
