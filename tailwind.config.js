@@ -3,6 +3,9 @@ module.exports = {
   content: ["./templates/**/*.{html,php}", "./**/*.{html,php}"],
   theme: {
     extend: {
+      backgroundImage: {
+        contact: "url('../images/contact.svg')",
+      },
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",

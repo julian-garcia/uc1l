@@ -36,6 +36,10 @@
 
   .card-content {
     @apply p-4 rounded-b-md text-center;
+
+    p {
+      @apply mb-0;
+    }
   }
 
   .card-image {

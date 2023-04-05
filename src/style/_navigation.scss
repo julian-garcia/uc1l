@@ -24,29 +24,52 @@ header.header {
     @apply gap-0 text-white font-sans-demi-bold hidden xl:flex justify-self-end;
 
     .menu-item {
-      @apply block relative;
+      @apply block relative hover:border-b-secondary border-b-4 border-b-transparent
+      transition-all duration-300;
     }
 
-    .sub-menu {
-      @apply h-0 opacity-0 transition-none overflow-hidden;
+    .current-menu-item,
+    .current-page-parent {
+      @apply hover:border-b-transparent;
     }
 
-    & > .menu-item:hover .sub-menu {
-      @apply h-[unset] absolute top-8 left-0 ml-4 bg-white shadow-sm shadow-primary
-        text-black rounded-sm py-0 px-4 pb-2 -mt-2 opacity-100 transition-opacity duration-300;
-      a {
-        text-shadow: none;
-      }
+    & > .menu-item .sub-menu {
+      @apply absolute opacity-0 overflow-hidden transition-all duration-500 delay-200
+        top-8 left-0 ml-4 shadow-md shadow-primary bg-white text-black
+        rounded-sm py-0 px-4 -mt-2 border border-primary -translate-y-full;
 
       .menu-item {
+        @apply relative border-b-0;
+
         a {
-          @apply px-4 pb-0 -ml-4 -mr-4 border-none rounded-none block;
+          @apply px-4 pb-2 -ml-4 -mr-4 border-none rounded-none block;
+        }
+
+        &:hover {
+          @apply border-b-transparent;
+          &::after {
+            content: "";
+            @apply absolute w-full h-1 bottom-1.5 left-0 bg-secondary;
+          }
+        }
+
+        &::after {
+          content: "";
+          @apply absolute w-full h-1 bottom-1.5 left-0 bg-transparent transition-all duration-300;
         }
       }
 
-      .current-menu-item a {
-        @apply border-none rounded-none from-light to-light  block;
+      .menu-item.current-menu-item a {
+        @apply border-none rounded-none from-light to-light bg-light block;
       }
+
+      a {
+        text-shadow: none;
+      }
+    }
+
+    & > .menu-item:hover .sub-menu {
+      @apply opacity-100 z-10 translate-y-0;
     }
   }
 
@@ -58,7 +81,7 @@ header.header {
   }
 
   .mobile-menu {
-    @apply fixed w-full h-full left-0 top-0 p-8 bg-white xl:hidden;
+    @apply fixed w-full h-full left-0 top-0 p-8 bg-white bg-opacity-95 xl:hidden;
 
     .menu-item {
       @apply my-4 font-sans-demi-bold text-black;
@@ -75,15 +98,14 @@ header.header {
       @apply ml-4;
     }
   }
-
-  .menu-item.current-menu-item a {
-    @apply text-black p-2 bg-gradient-to-b from-light to-white
-        rounded-3xl rounded-tl-none border-secondary;
-    text-shadow: none;
-  }
-
   .menu-item a {
     @apply p-2 border-t-8 border-r-8 border-l-8 border-transparent;
     text-shadow: 1px 1px 0 var(--primary);
+  }
+  .current-menu-item > a,
+  .menu-item.current-page-parent > a {
+    @apply text-black p-2 bg-gradient-to-b from-light to-white
+        rounded-3xl rounded-tl-none border-secondary;
+    text-shadow: none;
   }
 }

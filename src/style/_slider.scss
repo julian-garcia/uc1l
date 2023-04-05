@@ -5,11 +5,21 @@
     @apply mx-auto sm:w-full max-w-2xl relative -mt-6;
 
     .swiper-wrapper {
-      @apply sm:mb-16;
+      @apply sm:mb-16 relative;
     }
 
     .swiper-slide {
-      @apply px-4 sm:px-14 py-10 mt-4 pr-0;
+      @apply px-4 sm:px-14 py-10 mt-4 pr-0 overflow-visible relative;
+
+      &::before {
+        content: '"';
+        @apply absolute left-1 top-0 font-sans-bold text-8xl -rotate-12 text-primary;
+      }
+
+      &::after {
+        content: '"';
+        @apply absolute top-0 right-0 font-sans-bold text-8xl rotate-6  text-primary;
+      }
     }
 
     .swiper-pagination {
@@ -29,16 +39,24 @@
     }
 
     .testimonial-text {
-      @apply bg-light border-8 border-primary p-4 relative min-h-[150px];
+      @apply bg-light border-8 border-primary p-4 relative min-h-[150px] max-h-[250px] overflow-y-scroll overflow-x-hidden;
 
-      &::before {
-        content: '"';
-        @apply absolute -left-6 sm:-left-14 -top-4 font-sans-bold text-8xl -rotate-12 text-primary;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary) var(--light-primary);
+
+      &::-webkit-scrollbar {
+        @apply w-2.5 border-2 border-white;
+      }
+      &::-webkit-scrollbar-track {
+        @apply m-1 rounded-md bg-white hover:bg-light-primary;
       }
 
-      &::after {
-        content: '"';
-        @apply absolute -top-8 right-0 sm:right-3 sm:-top-10 font-sans-bold text-8xl rotate-6  text-primary sm:text-light;
+      &::-webkit-scrollbar-track:active {
+        @apply bg-light-primary;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        @apply rounded-md bg-secondary hover:bg-primary active:bg-primary;
       }
     }
 

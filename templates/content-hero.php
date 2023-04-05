@@ -12,10 +12,12 @@
         <?php the_field( "hero_headline" ); ?>
       </h3>
     </div>
+    <?php if (get_field( "hero_intro" )): ?>
     <div class="hero-intro">
       <p>
         <?php the_field( "hero_intro" ); ?>
       </p>
     </div>
+    <?php endif; ?>
   </div>
 </div>
