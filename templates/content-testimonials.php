@@ -3,7 +3,12 @@
   <div class="swiper testimonials">
     <div class="swiper-wrapper">
     <?php
-      $the_query = new WP_Query( array( 'post_type' => 'testimonial' ) );
+      $the_query = new WP_Query(
+        array(
+          'post_type' => 'testimonial',
+          'posts_per_page' => '8'
+        )
+      );
       if ( $the_query->have_posts() ) : ?>
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <div class="swiper-slide">

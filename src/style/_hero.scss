@@ -37,6 +37,9 @@
 
     &.primary::before {
       @apply bg-gradient-to-br from-secondary to-primary sm:bg-primary sm:from-primary;
+      &.right {
+        @apply right-8 md:-right-44 sm:from-primary sm:to-secondary sm:via-primary;
+      }
     }
 
     &.light::before {

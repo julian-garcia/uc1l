@@ -7,7 +7,7 @@
     @apply text-black p-2 rounded-3xl rounded-tl-none max-w-full
       border-secondary border-2 border-t-4 border-l-4 bg-white bg-opacity-80
       focus:border-secondary focus:shadow-none focus:border-4
-      focus:bg-light;
+      focus:bg-light focus:text-black;
   }
 
   button[type="submit"].wpforms-submit {
@@ -24,7 +24,8 @@
   }
 
   .wpforms-field-label {
-    @apply font-sans-demi-bold text-lg mb-0.5 pr-3 bg-white bg-opacity-80 inline-block;
+    @apply font-sans-demi-bold text-lg mb-0.5 pr-3 bg-white bg-opacity-80
+      inline-block;
     font-variant: small-caps;
 
     .wpforms-required-label {
@@ -33,9 +34,19 @@
   }
 
   .wpforms-field {
-    @apply relative mb-4;
-    em.wpforms-error {
-      @apply absolute bg-white bg-opacity-80 py-2 pr-2 mt-1 before:top-2;
+    @apply relative mb-0 pt-2 pb-8 overflow-hidden;
+    em.wpforms-error,
+    .mailcheck-error {
+      @apply absolute bg-white bg-opacity-80 py-2 pr-2 mt-1 before:top-2 before:bg-primary text-primary;
+    }
+    .wpforms-error {
+      @apply border-primary active:border-primary border-2
+      focus:border-primary focus:shadow-none focus:border-2
+      hover:border-primary hover:shadow-none hover:border-2;
     }
   }
+}
+
+.wpforms-container.wpforms-container-full .wpforms-confirmation-container-full {
+  @apply bg-light border-none text-center font-sans-demi-bold;
 }

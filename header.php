@@ -5,8 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php if(is_front_page()): ?>
+    <meta name="description" content="U Change One Life (UC1L) is a 501(c)(3) nonprofit formed for you to unlock that inner perfect self by optimizing health and wellbeing in every major area.">
     <title><?php bloginfo( 'name' ); ?></title>
-  <?php else: ?>
+    <?php else: ?>
+    <meta name="description" content="<?php wp_title(''); echo ' | ';  bloginfo( 'name' ); ?>">
     <title><?php wp_title(''); echo ' | ';  bloginfo( 'name' ); ?></title>
   <?php endif; ?>
   <?php wp_head() ?>

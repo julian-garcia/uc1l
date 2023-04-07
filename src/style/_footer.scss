@@ -1,5 +1,5 @@
 footer {
-  @apply text-center text-white py-4 pt-20 relative mt-14;
+  @apply text-center text-white py-4 pt-20 relative mt-14 -z-10;
 
   &::before {
     content: "";

@@ -1,4 +1,5 @@
 .slider {
+  @apply my-20;
   max-width: calc(100vw - 3rem);
 
   .testimonials.swiper {

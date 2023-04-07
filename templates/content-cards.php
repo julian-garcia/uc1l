@@ -5,14 +5,14 @@
     <?php for ($i = 1; $i <= 6; $i++): ?>
     <?php if (get_field('card' . $i)['text']): ?>
     <div class="card <?php echo get_field('card' . $i)['type'] ?>">
-      <a class="card-link" href="<?php echo get_field('card' . $i)['button']['link'] ?>"></a>
+      <a class="card-link" href="<?php echo get_field('card' . $i)['button']['link'] ?>" aria-label="<?php echo get_field('card' . $i)['title'] ?>"></a>
       <?php $image_options = implode(' ', get_field('card' . $i)['card_image_options']); ?>
       <div class="card-image <?php echo $image_options; ?>"
         style="background-image: url(<?php echo get_field('card' . $i)['image']; ?>)">
       </div>
       <div class="card-content">
         <a href="<?php echo get_field('card' . $i)['button']['link'] ?>"
-          class="<?php if (get_field('card' . $i)['button']['label']) {echo 'card-label-link';} ?>">
+          class="<?php if (get_field('card' . $i)['button']['label']) {echo 'card-label-link';} ?>" aria-label="<?php echo get_field('card' . $i)['title'] ?>">
           <?php if (get_field('card' . $i)['button']['icon']): ?>
           <img class="card-icon" src="<?php echo get_field('card' . $i)['button']['icon'] ?>" alt="">
           <?php endif; ?>

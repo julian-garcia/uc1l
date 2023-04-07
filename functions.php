@@ -78,10 +78,17 @@ function mission_shortcode() {
   return ob_get_clean();
 }
 
+function triad_shortcode() {
+  ob_start();
+  get_template_part('templates/content', 'triad');
+  return ob_get_clean();
+}
+
 function shortcodes_init() {
   add_shortcode( 'cards', 'cards_shortcode' );
   add_shortcode( 'blocks', 'text_image_blocks_shortcode' );
   add_shortcode( 'mission', 'mission_shortcode' );
+  add_shortcode( 'triad', 'triad_shortcode' );
 }
 
 add_action('wp_enqueue_scripts', 'theme_scripts');

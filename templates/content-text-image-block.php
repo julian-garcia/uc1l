@@ -22,9 +22,17 @@
       </a>
       <?php endif; ?>
     </div>
+    <?php if (get_field( "block_" . $i )['block_video']): ?>
+    <div class="col-span-1">
+      <video loop autoplay muted class="video">
+        <source src="<?php echo get_field( "block_" . $i )["block_video"]; ?>" type="video/mp4">
+      </video>
+    </div>
+    <?php else: ?>
     <div class="block-image col-span-1 <?php echo implode(' ',$options); ?>">
       <div class="image" style="background-image:url(<?php echo get_field( "block_" . $i )["block_image"]; ?>)"></div>
     </div>
+    <?php endif; ?>
   </section>
   <? if (get_field( "block_" . $i )['block_background']): ?>
   </div>
@@ -35,7 +43,7 @@
 
 <?php if (get_field("section_button")["text"]): ?>
   <section class="text-center">
-    <a href="#" class="button ghost">
+    <a href="<?php echo get_field("section_button")["link"]; ?>" class="button ghost">
       <?php echo get_field("section_button")["text"]; ?>
     </a>
   </section>
