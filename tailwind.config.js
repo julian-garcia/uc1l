@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         contact: "url('../images/contact.svg')",
+        back: "url('../images/back.svg')",
       },
       colors: {
         primary: "var(--primary)",

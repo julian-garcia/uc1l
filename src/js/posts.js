@@ -5,7 +5,7 @@ const filterOption = document.querySelectorAll(
 
 if (postFilterForm) {
   filterOption.forEach((option) => {
-    option.addEventListener("click", (e) => {
+    option.addEventListener("click", () => {
       postFilterForm.submit();
     });
   });

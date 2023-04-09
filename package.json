@@ -9,7 +9,8 @@
     "src/js/main.js",
     "src/images/menu-toggle.svg",
     "src/images/close-menu.svg",
-    "src/images/contact.svg"
+    "src/images/contact.svg",
+    "src/images/back.svg"
   ],
   "targets": {
     "default": {
