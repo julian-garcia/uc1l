@@ -1,5 +1,5 @@
 i {
-  @apply font-icons inline-block leading-4 w-4 text-center;
+  @apply font-icons inline-block leading-4 text-center;
   font-style: normal;
 }
 
@@ -12,11 +12,11 @@ i.icon-blog {
 }
 
 i.icon-podcast {
-  @apply before:content-['\E804'];
+  @apply before:content-['\E808'];
 }
 
 i.icon-resource {
-  @apply before:content-['\E805'];
+  @apply before:content-['\E809'];
 }
 
 i.icon-case-study {
@@ -24,9 +24,29 @@ i.icon-case-study {
 }
 
 i.icon-webinar {
-  @apply before:content-['\E806'];
+  @apply before:content-['\E80B'];
 }
 
 i.icon-event {
   @apply before:content-['\E803'];
+}
+
+i.icon-fb {
+  @apply before:content-['\E804'];
+}
+
+i.icon-twitter {
+  @apply before:content-['\E80A'];
+}
+
+i.icon-ln {
+  @apply before:content-['\E806'];
+}
+
+i.icon-insta {
+  @apply before:content-['\E805'];
+}
+
+i.icon-email {
+  @apply before:content-['\E80C'];
 }

@@ -4,7 +4,7 @@ header {
 }
 
 main {
-  @apply max-w-screen-fill lg:w-content mx-auto px-4;
+  @apply max-w-screen-fill w-content mx-auto px-4 relative;
   grid-area: main;
 }
 

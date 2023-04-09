@@ -8,11 +8,11 @@
   }
 
   .post-content {
-    @apply max-w-2xl mx-auto relative;
+    @apply max-w-2xl mx-auto relative pr-0 md:pr-8 lg:pr-0;
   }
 
   .post-back {
-    @apply block absolute right-0 -top-14 border-b-4 border-b-primary
+    @apply block absolute right-0 md:right-8 lg:right-0 -top-14 border-b-4 border-b-primary
       pl-5 text-primary font-sans-demi-bold pr-2 bg-light-primary
       rounded-tr-md
       before:bg-back before:bg-contain before:w-12 before:h-12 before:block

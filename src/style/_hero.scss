@@ -50,7 +50,7 @@
       @apply mt-0 lg:mt-4 relative max-w-sm;
 
       .page-title {
-        @apply mb-8 uppercase text-2xl;
+        @apply mb-8 mt-4 uppercase text-2xl;
       }
     }
 
@@ -66,7 +66,7 @@
 
     &.right {
       .hero-text {
-        @apply order-1 md:order-2 text-left md:text-right;
+        @apply order-1 md:order-2 text-left md:text-right mr-10 2xl:mr-0;
       }
 
       .hero-intro {

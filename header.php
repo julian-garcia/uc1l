@@ -49,4 +49,10 @@
       ?>
     </div>
   </header>
-  <main class="<?php echo (is_single() && 'post' == get_post_type()) ? 'post ' . get_the_category()[0]->slug : '' ?>">
+  <?php
+    $isPost = is_single() && 'post' == get_post_type();
+    $categorySlug = get_the_category() ? get_the_category()[0]->slug : '';
+  ?>
+  <main class="<?php echo $isPost ? 'post ' . $categorySlug : '' ?>">
+    <?php get_template_part('templates/content', 'social'); ?>
+
