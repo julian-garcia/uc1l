@@ -10,28 +10,6 @@ function add_editor_styles() {
     add_editor_style( get_theme_file_uri( '/dist/style/style-editor.css' ) );
 }
 
-function event_post_type() {
-  register_post_type('event',
-    array(
-      'rewrite' => array('slug' => 'event'),
-      'labels' => array(
-        'name' => 'Events',
-        'singular_name' => 'Event',
-        'add_new_item' => 'Add New Event',
-        'edit_item' => 'Edit Event'
-      ),
-      'menu_icon' => 'dashicons-calendar',
-      'public' => true,
-      'has_archive' => false,
-      'show_in_rest' => false,
-      'supports' => array(
-        'title', 'thumbnail', 'editor', 'excerpt'
-      ),
-      'taxonomies' => array('post_tag')
-    )
-  );
-}
-
 function testimonial_post_type() {
   register_post_type('testimonial',
     array(
@@ -93,7 +71,7 @@ function shortcodes_init() {
 
 add_action('wp_enqueue_scripts', 'theme_scripts');
 add_action('admin_init', 'add_editor_styles');
-add_action( 'init', 'event_post_type' );
 add_action( 'init', 'testimonial_post_type' );
 add_action( 'init', 'setup_menus' );
 add_action( 'init', 'shortcodes_init' );
+add_theme_support( 'post-thumbnails' );

@@ -17,6 +17,7 @@ module.exports = {
         "sans-regular": ["regular", "sans-serif"],
         "sans-italic": ["italic", "sans-serif"],
         "sans-demi-bold": ["demibold", "sans-serif"],
+        icons: ["icons"],
       },
       fontSize: {
         base: "18px",

@@ -49,4 +49,4 @@
       ?>
     </div>
   </header>
-  <main>
+  <main class="<?php echo (is_single() && 'post' == get_post_type()) ? 'post ' . get_the_category()[0]->slug : '' ?>">

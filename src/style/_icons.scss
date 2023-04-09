@@ -1,0 +1,32 @@
+i {
+  @apply font-icons inline-block leading-4 w-4 text-center;
+  font-style: normal;
+}
+
+i.icon-all {
+  @apply before:content-['\E800'];
+}
+
+i.icon-blog {
+  @apply before:content-['\E801'];
+}
+
+i.icon-podcast {
+  @apply before:content-['\E804'];
+}
+
+i.icon-resource {
+  @apply before:content-['\E805'];
+}
+
+i.icon-case-study {
+  @apply before:content-['\E802'];
+}
+
+i.icon-webinar {
+  @apply before:content-['\E806'];
+}
+
+i.icon-event {
+  @apply before:content-['\E803'];
+}

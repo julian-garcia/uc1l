@@ -1,3 +1,122 @@
 .posts {
   @apply mt-0;
 }
+
+.post-filter {
+  @apply flex flex-wrap gap-4 mt-4 mb-12;
+  .filter-category {
+    @apply relative flex-initial mb-6;
+  }
+
+  input {
+    @apply absolute w-0 h-0 cursor-pointer;
+
+    &:checked + label {
+      @apply bg-primary text-white;
+    }
+    &:not(:checked) + label {
+      @apply bg-light text-black;
+    }
+  }
+
+  label {
+    @apply py-4 px-2 cursor-pointer;
+
+    i {
+      @apply relative w-8 before:text-3xl before:absolute before:right-0 before:-bottom-3;
+    }
+  }
+}
+
+.post-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
+
+  .post-grid-card {
+    @apply relative p-4 pt-24 border-8 border-light bg-white shadow-lg
+      hover:border-light-primary rounded-tl-[140px] rounded-br-3xl;
+
+    @screen lg {
+      &:nth-of-type(1) {
+        @apply rounded-tl-[140px] rounded-br-3xl;
+
+        .post-image {
+          @apply -left-3 -top-3;
+        }
+      }
+
+      &:nth-of-type(2) {
+        @apply rounded-none;
+
+        .post-image {
+          @apply left-1/2 -translate-x-1/2 -top-3;
+        }
+      }
+
+      &:nth-of-type(3) {
+        @apply rounded-none rounded-tr-[140px] rounded-bl-3xl;
+
+        .post-image {
+          @apply -right-3 -top-3 left-[unset];
+        }
+      }
+
+      &:nth-of-type(4) {
+        @apply rounded-none rounded-bl-[140px] rounded-tr-3xl pt-4 pb-24;
+
+        .post-image {
+          @apply -left-3 -bottom-3 top-[unset];
+        }
+      }
+
+      &:nth-of-type(5) {
+        @apply rounded-none pt-4 pb-24;
+
+        .post-image {
+          @apply left-1/2 -translate-x-1/2 -bottom-3 top-[unset];
+        }
+      }
+
+      &:nth-of-type(6) {
+        @apply rounded-none rounded-br-[140px] rounded-tl-3xl pt-4 pb-24;
+
+        .post-image {
+          @apply -right-3 -bottom-3 left-[unset] top-[unset];
+        }
+      }
+    }
+
+    &:hover .post-image {
+      @apply border-light-primary;
+    }
+
+    .post-title {
+      @apply mb-4;
+    }
+
+    .post-image {
+      @apply absolute w-24 h-24 rounded-full bg-light bg-cover bg-no-repeat
+      bg-center border-8 border-white text-center -left-3 -top-3;
+      i {
+        @apply before:text-5xl before:-translate-x-1/2 before:leading-relaxed w-full;
+      }
+    }
+
+    .post-link {
+      @apply absolute w-full h-full left-0 top-0;
+    }
+
+    .post-excerpt {
+      @apply max-h-28 overflow-hidden;
+    }
+  }
+}
+.post-grid-pagination {
+  @apply mt-10 text-center font-sans-demi-bold text-lg;
+  > * {
+    @apply p-2 leading-snug w-10 h-10 inline-block;
+  }
+
+  .page-numbers.current {
+    @apply bg-primary text-white rounded-full;
+  }
+}
