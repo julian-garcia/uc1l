@@ -30,6 +30,14 @@
     }
   }
 
+  &.secondary {
+    @apply bg-secondary text-black;
+
+    .card-label {
+      @apply border-secondary bg-white text-black;
+    }
+  }
+
   .card-link {
     @apply absolute h-full w-full left-0 top-0;
   }

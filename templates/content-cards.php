@@ -5,11 +5,15 @@
     <?php for ($i = 1; $i <= 6; $i++): ?>
     <?php if (get_field('card' . $i)['text']): ?>
     <div class="card <?php echo get_field('card' . $i)['type'] ?>">
+      <?php if (get_field('card' . $i)['button']['link']): ?>
       <a class="card-link" href="<?php echo get_field('card' . $i)['button']['link'] ?>" aria-label="<?php echo get_field('card' . $i)['title'] ?>"></a>
+      <?php endif; ?>
       <?php $image_options = implode(' ', get_field('card' . $i)['card_image_options']); ?>
+      <?php if (get_field('card' . $i)['image']): ?>
       <div class="card-image <?php echo $image_options; ?>"
         style="background-image: url(<?php echo get_field('card' . $i)['image']; ?>)">
       </div>
+      <?php endif; ?>
       <div class="card-content">
         <a href="<?php echo get_field('card' . $i)['button']['link'] ?>"
           class="<?php if (get_field('card' . $i)['button']['label']) {echo 'card-label-link';} ?>" aria-label="<?php echo get_field('card' . $i)['title'] ?>">

@@ -31,6 +31,27 @@ function testimonial_post_type() {
   );
 }
 
+function team_member_post_type() {
+  register_post_type('team',
+    array(
+      'rewrite' => array('slug' => 'team'),
+      'labels' => array(
+        'name' => 'Team Members',
+        'singular_name' => 'Team Member',
+        'add_new_item' => 'Add New Team Member',
+        'edit_item' => 'Edit Team Member'
+      ),
+      'menu_icon' => 'dashicons-admin-users',
+      'public' => true,
+      'has_archive' => false,
+      'show_in_rest' => false,
+      'supports' => array(
+        'title', 'editor', 'thumbnail'
+      )
+    )
+  );
+}
+
 function setup_menus() {
   $locations = array(
     'primary' => 'Main Menu',
@@ -72,6 +93,7 @@ function shortcodes_init() {
 add_action('wp_enqueue_scripts', 'theme_scripts');
 add_action('admin_init', 'add_editor_styles');
 add_action( 'init', 'testimonial_post_type' );
+add_action( 'init', 'team_member_post_type' );
 add_action( 'init', 'setup_menus' );
 add_action( 'init', 'shortcodes_init' );
 add_theme_support( 'post-thumbnails' );

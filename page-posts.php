@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <?php the_content(); ?>
+<?php if (isset($_GET['cat'])) { $cat = $_GET['cat']; } ?>
 <section class="posts full-width light-primary">
   <form action="/posts" method="post" class="post-filter" id="postFilterForm">
     <div class="filter-category">
@@ -19,6 +20,8 @@
       <div class="filter-category">
         <?php if (isset($_POST['filter'])): ?>
           <input type="radio" name="filter" id="filter-<?php echo $category->slug; ?>" value="<?php echo $category->slug; ?>" <?php echo $_POST['filter'] == $category->slug ? 'checked' : '' ?>>
+        <?php elseif($cat): ?>
+          <input type="radio" name="filter" id="filter-<?php echo $category->slug; ?>" value="<?php echo $category->slug; ?>" <?php echo $cat == $category->slug ? 'checked' : '' ?>>
         <?php else: ?>
           <input type="radio" name="filter" id="filter-<?php echo $category->slug; ?>" value="<?php echo $category->slug; ?>">
         <?php endif; ?>
@@ -41,6 +44,12 @@
         } else {
           $options = array( 'post_type' => 'post', 'posts_per_page' => 6 );
         }
+      } else if ($cat) {
+        $options = array(
+          'post_type' => 'post',
+          'posts_per_page' => 6,
+          'category_name' => $cat
+        );
       } else {
         $options = array( 'post_type' => 'post', 'posts_per_page' => 6 );
       }

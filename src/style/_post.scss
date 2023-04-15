@@ -1,21 +1,53 @@
-.post {
+.post,
+.team {
   section {
     @apply mt-0;
   }
 
   .post-title {
-    @apply mb-16 font-sans-bold text-3xl text-center;
+    @apply mb-16 mt-4 md:mt-0 font-sans-bold text-3xl text-center;
   }
 
   .post-content {
-    @apply max-w-2xl mx-auto relative pr-0 md:pr-8 lg:pr-0;
+    @apply max-w-2xl mx-auto relative pr-4 md:pr-8 lg:pr-0;
+    a {
+      @apply text-primary font-sans-demi-bold;
+    }
   }
 
   .post-back {
     @apply block absolute right-0 md:right-8 lg:right-0 -top-14 border-b-4 border-b-primary
-      pl-5 text-primary font-sans-demi-bold pr-2 bg-light-primary
-      rounded-tr-md
+      pl-5 text-primary font-sans-demi-bold pr-2 bg-light-primary rounded-tr-md
       before:bg-back before:bg-contain before:w-12 before:h-12 before:block
       before:absolute before:-left-6 before:-top-[12px];
+  }
+
+  .team-member-image {
+    @apply max-w-full w-[calc(100%-1rem)] xs:w-52 md:w-80 float-left mr-4 mb-4 mt-1;
+  }
+}
+
+.team {
+  .post-title {
+    @apply mb-8;
+  }
+}
+
+.event {
+  .event-details {
+    @apply grid grid-cols-1 sm:grid-cols-2 mb-6;
+
+    .event-date-time {
+      @apply bg-gradient-to-r from-transparent via-light-primary to-light-primary
+        py-6 px-4 -ml-4;
+    }
+
+    .event-overview {
+      @apply bg-primary text-white py-6 px-4;
+    }
+
+    .button {
+      @apply text-white mt-4;
+    }
   }
 }
