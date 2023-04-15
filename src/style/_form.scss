@@ -1,5 +1,5 @@
 .wpforms-container.wpforms-container-full .wpforms-form {
-  @apply w-[600px] mx-auto max-w-full -mt-16 bg-contact bg-no-repeat bg-contain;
+  @apply w-[600px] max-w-full bg-no-repeat bg-contain;
 
   input[type="text"],
   input[type="email"],
@@ -45,6 +45,10 @@
       hover:border-primary hover:shadow-none hover:border-2;
     }
   }
+}
+
+.contact-form .wpforms-form {
+  @apply bg-contact -mt-16 mx-auto;
 }
 
 .wpforms-container.wpforms-container-full .wpforms-confirmation-container-full {

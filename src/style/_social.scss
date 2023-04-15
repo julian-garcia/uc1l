@@ -6,3 +6,17 @@
     @apply bg-primary rounded-full w-10 h-10 text-center pt-1;
   }
 }
+
+.social-share {
+  @apply flex gap-0.5 text-2xl mb-4 border-b-4 border-l-2 border-primary
+    w-fit pr-4 pt-2 pb-1 pl-2 items-baseline bg-gradient-to-r
+    from-light-primary to-transparent rounded-tl-md;
+
+  .share {
+    @apply text-xl text-primary font-sans-demi-bold;
+  }
+
+  li {
+    @apply leading-none;
+  }
+}

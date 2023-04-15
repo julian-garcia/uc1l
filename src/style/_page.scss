@@ -1,5 +1,14 @@
 .page {
   iframe {
+    @apply relative;
+  }
+
+  .coaching iframe {
     @apply w-full min-h-[700px] border-8 border-light-primary rounded-lg;
+  }
+
+  .donate-column {
+    @apply content-[''] relative before:absolute before:bg-uc1l
+    before:bg-no-repeat before:w-full before:h-full before:animate-pulse;
   }
 }
