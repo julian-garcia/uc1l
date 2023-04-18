@@ -12,6 +12,7 @@
     .hero-text {
       @apply order-2 md:order-1 -mt-36 md:mt-0;
     }
+
     .hero-image {
       @apply order-1 md:order-2;
     }
@@ -22,7 +23,7 @@
 
     &::before {
       content: "";
-      @apply absolute rounded-full -top-[520px] md:-top-[470px];
+      @apply absolute rounded-full -top-[520px] md:-top-[450px];
       width: 800px;
       height: 800px;
     }
@@ -36,9 +37,10 @@
     }
 
     &.primary::before {
-      @apply bg-gradient-to-br from-secondary to-primary sm:bg-primary sm:from-primary;
+      @apply bg-gradient-to-br from-secondary to-light md:bg-primary md:from-primary md:to-primary;
+
       &.right {
-        @apply right-8 md:-right-44 sm:from-primary sm:to-secondary sm:via-primary;
+        @apply -right-20 md:-right-72 lg:-right-44 from-light to-secondary via-light md:from-primary md:to-secondary md:via-primary;
       }
     }
 
@@ -56,11 +58,14 @@
 
     .hero-intro {
       @apply text-lg font-sans-demi-bold mt-0 md:mt-16 relative;
+      a {
+        @apply text-primary font-sans-demi-bold;
+      }
     }
 
     &.primary {
       .hero-text {
-        @apply text-white;
+        @apply text-black md:text-white;
       }
     }
 
@@ -91,5 +96,11 @@
 
   .headline {
     @apply my-8 font-sans-demi-bold;
+  }
+
+  &.primary .headline {
+    a {
+      @apply underline;
+    }
   }
 }

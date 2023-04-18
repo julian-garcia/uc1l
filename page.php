@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 <?php get_template_part('templates/content', 'hero'); ?>
 <?php get_template_part('templates/content', 'intro'); ?>
-<?php the_content(); ?>
+<section class="relative">
+  <?php the_content(); ?>
+</section>
 <?php get_footer(); ?>

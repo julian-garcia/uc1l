@@ -42,5 +42,6 @@ module.exports = {
       },
     },
   },
+  safelist: ["relative"],
   plugins: [],
 };

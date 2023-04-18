@@ -25,6 +25,10 @@
   .team-member-image {
     @apply max-w-full w-[calc(100%-1rem)] xs:w-52 md:w-80 float-left mr-4 mb-4 mt-1;
   }
+
+  iframe {
+    @apply w-full h-96;
+  }
 }
 
 .team {
