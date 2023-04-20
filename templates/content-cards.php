@@ -5,7 +5,11 @@
     <?php for ($i = 1; $i <= 6; $i++): ?>
     <?php if (get_field('card' . $i)['text']): ?>
     <div class="card <?php echo get_field('card' . $i)['type'] ?>">
-      <?php if (get_field('card' . $i)['button']['link']): ?>
+      <?php if (get_field('card' . $i)['button']['popup']): ?>
+      <button class="card-link popup"
+        data-share="<?php echo get_field('card' . $i)['button']['link'] ?>"
+        data-popup-id="<?php echo get_field('card' . $i)['button']['popup']; ?>"></button>
+      <?php elseif (get_field('card' . $i)['button']['link']): ?>
       <a class="card-link" href="<?php echo get_field('card' . $i)['button']['link'] ?>" aria-label="<?php echo get_field('card' . $i)['title'] ?>"></a>
       <?php endif; ?>
       <?php $image_options = implode(' ', get_field('card' . $i)['card_image_options']); ?>

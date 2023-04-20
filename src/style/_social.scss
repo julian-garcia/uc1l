@@ -8,9 +8,10 @@
 }
 
 .social-share {
-  @apply flex gap-0.5 text-2xl mb-4 border-b-4 border-l-2 border-primary
+  @apply flex gap-0.5 text-2xl mb-4 -mt-8 border-l-4 border-primary
     w-fit pr-4 pt-2 pb-1 pl-2 items-baseline bg-gradient-to-r
-    from-light-primary to-transparent rounded-tl-md;
+    from-light-primary to-transparent rounded-l-full fixed bottom-12 right-2
+    md:relative md:bottom-0;
 
   .share {
     @apply text-xl text-primary font-sans-demi-bold;

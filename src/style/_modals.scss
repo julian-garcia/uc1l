@@ -1,0 +1,25 @@
+.modal {
+  @apply fixed max-w-full w-full h-full hidden before:absolute before:left-0 before:top-0 z-50
+    before:bg-black before:content-[''] before:bg-opacity-50 before:w-full before:h-full;
+
+  &.show {
+    @apply block;
+  }
+
+  .modal-content {
+    @apply max-w-full w-[600px] max-h-80 bg-white absolute px-4 py-8
+      left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+
+    h2 {
+      @apply text-center;
+    }
+  }
+
+  .modal-share {
+    @apply flex gap-3 mx-auto justify-center mt-2;
+
+    i {
+      @apply text-4xl text-primary;
+    }
+  }
+}

@@ -16,7 +16,7 @@
   }
 
   .post-back {
-    @apply block absolute right-0 md:right-8 lg:right-0 -top-8 border-b-4 border-b-primary
+    @apply block absolute right-0 md:right-8 lg:right-0 -top-8 md:top-2 border-b-4 border-b-primary
       pl-5 text-primary font-sans-demi-bold pr-2 bg-light-primary rounded-tr-md
       before:bg-back before:bg-contain before:w-12 before:h-12 before:block
       before:absolute before:-left-6 before:-top-[12px];

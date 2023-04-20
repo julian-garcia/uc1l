@@ -42,6 +42,10 @@
     @apply absolute h-full w-full left-0 top-0;
   }
 
+  button.card-link {
+    @apply bg-transparent border-none;
+  }
+
   .card-content {
     @apply p-4 rounded-b-md text-center;
 
