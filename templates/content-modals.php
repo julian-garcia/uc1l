@@ -13,7 +13,7 @@
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/intent/tweet?url=&text=UC1L+Health" target="_blank" rel="noopener noreferrer" class="link">
+        <a href="https://twitter.com/intent/tweet?text=UC1L+Health&url=" target="_blank" rel="noopener noreferrer" class="link">
           <i class="icon-twitter"></i>
         </a>
       </li>

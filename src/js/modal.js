@@ -6,14 +6,24 @@ if (popupButtons) {
     const modal = document.querySelector(
       `.modal#${button.getAttribute("data-popup-id")}`
     );
-    modal.querySelectorAll(".link").forEach((link) => {
-      link.setAttribute("href", link.getAttribute("href") + shareUrl);
-    });
     button.addEventListener("click", () => {
+      modal.querySelectorAll(".link").forEach((link) => {
+        link.setAttribute(
+          "href",
+          link.getAttribute("href").replaceAll(shareUrl, "")
+        );
+        link.setAttribute("href", link.getAttribute("href") + shareUrl);
+      });
       modal.classList.add("show");
     });
     modal.addEventListener("click", () => {
       modal.classList.remove("show");
+      modal.querySelectorAll(".link").forEach((link) => {
+        link.setAttribute(
+          "href",
+          link.getAttribute("href").replaceAll(shareUrl, "")
+        );
+      });
     });
   });
 }
