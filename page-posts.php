@@ -54,7 +54,9 @@
         $options = array( 'post_type' => 'post', 'posts_per_page' => 6 );
       }
       $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-      $post_query = new WP_Query(array_merge($options, array('paged' => $paged)));
+      $post_query = new WP_Query(
+        array_merge($options, array('paged' => $paged, 'orderby' => 'rand'))
+      );
       while($post_query->have_posts() ): $post_query->the_post(); ?>
       <div class="post-grid-card">
         <?php if (get_the_post_thumbnail_url()): ?>

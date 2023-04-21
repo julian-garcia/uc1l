@@ -8,11 +8,22 @@ if (popupButtons) {
     );
     button.addEventListener("click", () => {
       modal.querySelectorAll(".link").forEach((link) => {
+        var href = new URL(link.getAttribute("href"));
+        if (href.searchParams.has("url")) {
+          href.searchParams.set("url", shareUrl);
+        }
+        if (href.searchParams.has("u")) {
+          href.searchParams.set("u", shareUrl);
+        }
+        if (href.searchParams.has("body")) {
+          href.searchParams.set("body", shareUrl);
+        }
+
         link.setAttribute(
           "href",
           link.getAttribute("href").replaceAll(shareUrl, "")
         );
-        link.setAttribute("href", link.getAttribute("href") + shareUrl);
+        link.setAttribute("href", href.toString());
       });
       modal.classList.add("show");
     });

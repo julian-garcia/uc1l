@@ -38,6 +38,10 @@ body {
   @apply font-sans-regular;
 }
 
+strong {
+  @apply font-sans-demi-bold;
+}
+
 html {
   font-size: 18px;
 }

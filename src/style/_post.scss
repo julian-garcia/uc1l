@@ -5,7 +5,14 @@
   }
 
   .post-title {
-    @apply mb-8 mt-4 md:mt-0 font-sans-bold text-3xl text-left md:text-center;
+    @apply mb-12 mt-4 md:mt-0 font-sans-bold text-3xl text-left max-w-full w-[700px]
+      md:text-center;
+  }
+
+  h2,
+  h3,
+  h4 {
+    @apply my-3;
   }
 
   .post-content {

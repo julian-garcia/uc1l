@@ -1,6 +1,7 @@
 button,
-.button {
-  @apply bg-primary border-2 border-primary text-white font-sans-demi-bold px-4 py-2 inline-block uppercase;
+.button,
+.wp-element-button {
+  @apply bg-primary border-2 border-primary text-white font-sans-demi-bold px-4 py-2 inline-block uppercase rounded-none;
 
   &.button-light {
     @apply bg-light text-black border-light;
