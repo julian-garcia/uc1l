@@ -1,6 +1,13 @@
 <?php get_header(); ?>
 <?php the_content(); ?>
-<?php if (isset($_GET['cat'])) { $cat = $_GET['cat']; } ?>
+<?php
+  if (isset($_GET['cat'])) {
+    $cat =  $_GET['cat'];
+  } elseif (isset($_POST['filter'])) {
+    $cat =  $_POST['filter'];
+  }
+?>
+
 <section class="posts full-width light-primary">
   <form action="/posts" method="post" class="post-filter" id="postFilterForm">
     <div class="filter-category">
@@ -55,7 +62,7 @@
       }
       $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
       $post_query = new WP_Query(
-        array_merge($options, array('paged' => $paged, 'orderby' => 'rand'))
+        array_merge($options, array('paged' => $paged, 'orderby' => 'date', 'order' => 'DESC'))
       );
       while($post_query->have_posts() ): $post_query->the_post(); ?>
       <div class="post-grid-card">
@@ -77,14 +84,16 @@
   </div>
   <div class="post-grid-pagination">
     <?php
-      echo paginate_links( array(
+      $addArgs = $cat && $cat !== 'all' ? array('add_args' => array( 'cat' => $cat)) : [];
+      $paginateOptions = array(
         'base' => str_replace( 999999, '%#%', esc_url( get_pagenum_link( 999999 ) ) ),
         'format' => '?paged=%#%',
         'current' => max( 1, get_query_var('paged') ),
         'total' => $post_query->max_num_pages,
         'prev_text' => '<',
-        'next_text' => '>',
-      )); ?>
+        'next_text' => '>'
+      );
+      echo paginate_links( array_merge($paginateOptions, $addArgs)); ?>
   </div>
 </section>
 <?php get_footer(); ?>
