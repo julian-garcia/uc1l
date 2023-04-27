@@ -9,7 +9,7 @@
     <a href="<?php the_field( "hero_link" ); ?>" class="button">
       <?php the_field( "hero_link_text" ); ?>
     </a>
-    <a href="<?php echo get_field( "secondary_link" )['link']; ?>" class="button">
+    <a href="<?php echo get_field( "secondary_link" )['link']; ?>" class="button" target="_blank">
       <?php echo get_field( "secondary_link" )['text']; ?>
     </a>
   </div>

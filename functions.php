@@ -90,10 +90,15 @@ function shortcodes_init() {
   add_shortcode( 'triad', 'triad_shortcode' );
 }
 
+function page_excerpt() {
+  add_post_type_support( 'page', 'excerpt' );
+}
+
 add_action('wp_enqueue_scripts', 'theme_scripts');
 add_action('admin_init', 'add_editor_styles');
 add_action( 'init', 'testimonial_post_type' );
 add_action( 'init', 'team_member_post_type' );
 add_action( 'init', 'setup_menus' );
 add_action( 'init', 'shortcodes_init' );
+add_action( 'init', 'page_excerpt' );
 add_theme_support( 'post-thumbnails' );
