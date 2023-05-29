@@ -69,6 +69,12 @@
       }
     }
 
+    &.left {
+      .hero-intro {
+        @apply pr-0 md:pr-8 2xl:pr-0;
+      }
+    }
+
     &.right {
       .hero-text {
         @apply order-1 md:order-2 text-left md:text-right mr-10 2xl:mr-0;

@@ -1,7 +1,7 @@
 <section class="full-width light">
   <h2 class="post-title"><?php the_title(); ?></h2>
   <div class="post-content">
-    <a class="post-back" href="/posts" aria-label="back">Back to posts</a>
+    <a class="post-back" href="/posts?cat=event" aria-label="back">Back to events</a>
     <div class="event-details">
       <div class="event-date-time">
         <h3 class="event-date"><?php the_field('event_date'); ?></h3>

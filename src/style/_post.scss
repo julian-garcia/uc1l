@@ -15,6 +15,13 @@
     @apply my-3;
   }
 
+  ol {
+    @apply list-decimal;
+    li {
+      @apply mb-2;
+    }
+  }
+
   .post-content {
     @apply max-w-2xl mx-auto relative pr-4 md:pr-8 lg:pr-0;
     a {
@@ -23,7 +30,7 @@
   }
 
   .post-back {
-    @apply block absolute right-0 md:right-8 lg:right-0 -top-8 md:top-2 border-b-4 border-b-primary
+    @apply block absolute right-0 md:right-8 lg:right-0 -top-9 border-b-4 border-b-primary
       pl-5 text-primary font-sans-demi-bold pr-2 bg-light-primary rounded-tr-md
       before:bg-back before:bg-contain before:w-12 before:h-12 before:block
       before:absolute before:-left-6 before:-top-[12px];
@@ -35,6 +42,12 @@
 
   iframe {
     @apply w-full h-96;
+  }
+}
+
+.blog {
+  .post-back {
+    @apply -top-8 md:top-2;
   }
 }
 

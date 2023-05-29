@@ -4,6 +4,7 @@
   <?php get_template_part('templates/content', 'hero-home'); ?>
 </div>
 
+<?php get_template_part('templates/content', 'mission'); ?>
 <?php get_template_part('templates/content', 'intro'); ?>
 <?php get_template_part('templates/content', 'cards'); ?>
 <?php get_template_part('templates/content', 'testimonials'); ?>

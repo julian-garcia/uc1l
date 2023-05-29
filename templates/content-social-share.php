@@ -16,7 +16,7 @@
     </a>
   </li>
   <li>
-    <a href="mailto:info@example.com?&subject=<?php the_title(); ?>&body=<?php the_permalink(); ?>" target="_blank">
+    <a href="mailto:?&subject=<?php the_title(); ?>&body=<?php the_permalink(); ?>" target="_blank">
       <i class="icon-email"></i>
     </a>
   </li>

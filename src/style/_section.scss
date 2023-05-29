@@ -5,7 +5,7 @@ section {
     @apply block md:grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 relative;
 
     .image {
-      @apply bg-cover bg-no-repeat h-36 md:min-h-[18rem] w-full sm:w-36 md:h-full md:w-full
+      @apply bg-cover bg-no-repeat bg-center h-36 md:min-h-[18rem] w-full sm:w-36 md:h-full md:w-full
       float-left md:float-none mr-4 mb-2 md:mr-0 md:mb-0;
 
       &.fit {
