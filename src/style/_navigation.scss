@@ -8,7 +8,7 @@ header.header {
   }
 
   h1 {
-    @apply text-lg xs:text-3xl;
+    @apply text-lg xs:text-2xl;
 
     @screen sm {
       text-shadow: 0 0 7px var(--light), 0 0 10px var(--light),
@@ -17,7 +17,7 @@ header.header {
   }
 
   .custom-logo {
-    @apply w-16 h-16 xs:w-20 xs:h-20;
+    @apply w-20 h-20 xs:w-32 mt-0 -ml-8 xs:-mt-4 block;
   }
 
   .menu {

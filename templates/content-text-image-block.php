@@ -1,3 +1,6 @@
+<?php if (get_field("section_title")): ?>
+<h2 class="sub-title text-center"><?php the_field("section_title"); ?></h2>
+<?php endif; ?>
 <?php for ($i = 1; $i <= 3; $i++): ?>
   <?php if (get_field( "block_" . $i )["block_text"]): ?>
   <?php $options = get_field( "block_" . $i )['block_image_options']; ?>

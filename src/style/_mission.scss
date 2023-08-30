@@ -2,7 +2,7 @@
   @apply grid grid-cols-1 gap-12 lg:grid-cols-5;
 
   .mission-title {
-    @apply col-span-2 relative h-fit pt-8 pb-12 -mt-12 rounded-br-full w-[420px] max-w-full;
+    @apply col-span-2 relative h-fit pt-8 pb-12 -mt-12 rounded-br-full max-w-[520px] w-full;
 
     &::before {
       content: "";
@@ -15,7 +15,7 @@
 
     h2,
     h3 {
-      @apply relative text-white;
+      @apply relative text-white max-w-full 3xl:max-w-xs;
     }
   }
 
