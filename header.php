@@ -19,20 +19,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <?php if(is_front_page()): ?>
-    <?php if(get_the_excerpt()): ?>
-      <meta name="description" content="<?php echo get_the_excerpt(); ?>">
-    <?php else: ?>
-      <meta name="description" content="U Change One Life (UC1L) is a 501(c)(3) nonprofit formed for you to unlock that inner perfect self by optimizing health and wellbeing in every major area.">
-    <?php endif; ?>
-    <title><?php bloginfo( 'name' ); ?></title>
+  <?php if(get_the_excerpt()): ?>
+    <meta name="description" content="<?php echo get_the_excerpt(); ?>">
   <?php else: ?>
-    <?php if(get_the_excerpt()): ?>
-      <meta name="description" content="<?php echo get_the_excerpt(); ?>">
+    <?php if(is_front_page()): ?>
+      <meta name="description" content="At UC1L (U Change 1 Life), our foundational principle is rooted in the transformative power of holistic health care. We firmly believe that the journey towards healing and wellbeing commences when individuals embark on a holistic approach, nurturing every facet of their existence. From physical vitality to emotional balance, mental clarity, spiritual fulfilment, and professional satisfaction — we recognize that these elements are interconnected threads, each influencing the other.">
     <?php else: ?>
-      <meta name="description" content="<?php wp_title(''); echo ' | ';  bloginfo( 'name' ); ?>">
+      <meta name="description" content="<?php the_title(); ?>">
     <?php endif; ?>
-    <title><?php wp_title(''); echo ' | ';  bloginfo( 'name' ); ?></title>
+  <?php endif; ?>
+  <?php if(get_field("meta_title")): ?>
+    <title><?php the_field( "meta_title" ); ?> | UC1L</title>
+  <?php else: ?>
+    <?php if(is_front_page()): ?>
+      <title><?php bloginfo( 'name' ); ?></title>
+    <?php else: ?>
+      <title><?php the_title(); ?> | UC1L</title>
+    <?php endif; ?>
   <?php endif; ?>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
