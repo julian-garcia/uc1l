@@ -1,5 +1,5 @@
 header {
-  @apply max-w-screen-fill py-4;
+  @apply max-w-screen-fill py-10 lg:py-7;
   grid-area: header;
 }
 
@@ -30,6 +30,10 @@ p {
   @apply w-screen left-1/2 right-1/2 pt-12 -z-10;
 
   margin-left: calc(-50vw + 50%);
+
+  .social-media-links + & {
+    @apply pt-20;
+  }
 
   &.light {
     @apply bg-gradient-to-b from-light to-white;

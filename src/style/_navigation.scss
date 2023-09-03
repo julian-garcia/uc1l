@@ -1,6 +1,8 @@
 header.header {
-  @apply bg-primary text-white sm:text-black sm:bg-gradient-to-r
-    from-light to-primary via-primary z-40 relative;
+  box-shadow: 0px 10px 28px -4px rgba(64, 21, 284, 0.3);
+
+  @apply text-black bg-gradient-to-r
+    from-light to-light-primary z-40 relative;
 
   .header-container {
     @apply max-w-full lg:w-content px-4 mx-auto grid grid-cols-3 gap-2 xs:gap-4 items-center justify-items-start;
@@ -17,11 +19,14 @@ header.header {
   }
 
   .custom-logo {
-    @apply w-20 h-20 xs:w-32 mt-0 -ml-8 xs:-mt-4 block;
+    @apply w-48 h-auto lg:w-56 block relative -top-6 lg:-top-[38px] -left-5 lg:-left-6;
+    img {
+      @apply absolute;
+    }
   }
 
   .menu {
-    @apply gap-0 text-white font-sans-demi-bold hidden xl:flex justify-self-end;
+    @apply gap-0 text-white font-sans-demi-bold hidden lg:flex justify-self-end;
 
     .menu-item {
       @apply block relative hover:border-b-secondary border-b-4 border-b-transparent
@@ -74,14 +79,14 @@ header.header {
   }
 
   .mobile-menu-toggle {
-    @apply fixed right-4 top-6 block xl:hidden bg-white rounded-full p-2 z-10 border-4;
+    @apply fixed right-2 top-4 block lg:hidden bg-white rounded-full p-2 z-10 border-4;
     img {
-      @apply w-8 h-8 cursor-pointer;
+      @apply w-6 h-6 cursor-pointer;
     }
   }
 
   .mobile-menu {
-    @apply fixed w-full h-full left-0 top-0 p-8 bg-white bg-opacity-95 xl:hidden overflow-y-scroll;
+    @apply fixed w-full h-full left-0 top-0 p-8 bg-white bg-opacity-95 lg:hidden overflow-y-scroll;
 
     .menu-item {
       @apply my-4 font-sans-demi-bold text-black;
@@ -99,8 +104,7 @@ header.header {
     }
   }
   .menu-item a {
-    @apply p-2 border-t-8 border-r-8 border-l-8 border-transparent;
-    text-shadow: 1px 1px 0 var(--primary);
+    @apply p-2 border-t-8 border-r-8 border-l-8 border-transparent text-black;
   }
   .current-menu-item > a,
   .menu-item.current-page-parent > a {

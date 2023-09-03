@@ -51,11 +51,9 @@
   <header class="header">
     <div class="header-container">
       <a href="<?php echo site_url() ?>" class="custom-logo" rel="home">
-        <img src="<?php echo get_site_icon_url(); ?>" alt="<?php bloginfo( 'name' ); ?>">
+        <img src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.svg" alt="<?php bloginfo( 'name' ); ?>">
       </a>
-      <h1>
-        <a href="/">U Change 1 Life</a>
-      </h1>
+      <div></div>
       <?php
         wp_nav_menu(
           array(

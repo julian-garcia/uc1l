@@ -10,7 +10,8 @@
     "src/images/menu-toggle.svg",
     "src/images/close-menu.svg",
     "src/images/contact.svg",
-    "src/images/back.svg"
+    "src/images/back.svg",
+    "src/images/logo.svg"
   ],
   "targets": {
     "default": {

@@ -1,6 +1,6 @@
 .social-media-links {
-  @apply absolute right-0 2xl:-right-8 top-0 md:top-4 text-3xl bg-light-primary py-1 md:px-1 md:py-0
-    rounded-full text-white z-20 grid gap-2 grid-flow-col md:grid-flow-row;
+  @apply absolute right-0 2xl:-right-8 top-0 md:top-4 text-3xl bg-light-primary px-1 py-0
+    rounded-full text-white z-20 grid gap-2 grid-flow-row;
 
   li {
     @apply bg-primary rounded-full w-10 h-10 text-center pt-1;

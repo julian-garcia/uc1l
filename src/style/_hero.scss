@@ -37,10 +37,10 @@
     }
 
     &.primary::before {
-      @apply bg-gradient-to-br from-secondary to-light md:bg-primary md:from-primary md:to-primary;
+      @apply bg-gradient-to-br from-light-primary to-secondary via-light-primary;
 
       &.right {
-        @apply -right-20 md:-right-72 lg:-right-44 from-light to-secondary via-light md:from-primary md:to-secondary md:via-primary;
+        @apply -right-20 md:-right-72 lg:-right-44;
       }
     }
 
@@ -65,7 +65,7 @@
 
     &.primary {
       .hero-text {
-        @apply text-black md:text-white;
+        @apply text-black;
       }
     }
 
